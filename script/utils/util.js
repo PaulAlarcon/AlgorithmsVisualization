@@ -8,7 +8,6 @@ const generateArray = (size, max_num) => {
 
 
 const swap = (x, y, arr) => {
-    console.log(`Checking ${arr[x]} and ${arr[y]} right now`);
     let temp = arr[y];
     arr[y] = arr[x];
     arr[x] = temp;

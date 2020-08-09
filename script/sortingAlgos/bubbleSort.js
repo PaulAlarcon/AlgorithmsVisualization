@@ -1,11 +1,11 @@
-import * as util from "./util.js";
-import * as canvas from "./canvas.js";
-import * as modal from "./modal.js";
+import * as util from "../utils/util.js";
+import * as canvas from "../utils/canvas.js";
+import * as modal from "../utils/modal.js";
 
 
-    let arr = util.generateArray(75, 50);
+    let arr = util.generateArray(50, 50);
 
-    let originX = 10;
+    // let originX = 10;
     let originY = canvas.height - 20;
     let width = canvas.width/arr.length;
     let spacing = width * 0.1;
@@ -26,13 +26,7 @@ import * as modal from "./modal.js";
         });
       };
 
-
-      console.log(arr);
-
-    const bubbleSort = () => {
-
-    }
-
+     //bubble sort
     let i = 0;
     const currentInterval = setInterval(() => {
 
@@ -49,9 +43,8 @@ import * as modal from "./modal.js";
           drawArray(arr);
         }
       }
-
       i++;
-    }, 1000/18);
+    }, 1000/60);
 
 
 
