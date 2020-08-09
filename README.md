@@ -1,4 +1,4 @@
-# All types of Algorithms :D :3
+# Sorting Algorithms
 
 ## Bubble Sort
 
