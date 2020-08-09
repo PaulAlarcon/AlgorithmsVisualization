@@ -12,3 +12,4 @@ repeatedly finds the minimun element from the unsorted part and putting it at th
 
 ## Insertion Sort
 
+One element is consumed and compared to its adjacent neighbors at each iteration.
