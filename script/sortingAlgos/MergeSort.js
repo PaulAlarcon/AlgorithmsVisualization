@@ -3,7 +3,7 @@ import * as canvas from "../utils/canvas.js";
 import * as modal from "../utils/modal.js";
 
 
-    let arr = util.generateArray(300, 50);
+    let arr = util.generateArray(50, 50);
     let originY = canvas.height - 20;
     let width = canvas.width/arr.length;
     let spacing = width * 0.1;
@@ -24,24 +24,11 @@ import * as modal from "../utils/modal.js";
         });
       };
 
-     //bubble sort
-    let i = 0;
+     //insertion sort
+
     const currentInterval = setInterval(() => {
 
-      if (i == arr.length){
-        clearInterval(currentInterval);
-        modal.openModal();
-        console.log(arr);
-      } 
 
-      for (let j = 1; j < arr.length - i; j++) {
-        if (arr[j - 1] > arr[j]) {
-          util.swap(j - 1, j, arr);
-          canvas.paintCanvas("black");
-          drawArray(arr);
-        }
-      }
-      i++;
     }, 1000/60);
 
 

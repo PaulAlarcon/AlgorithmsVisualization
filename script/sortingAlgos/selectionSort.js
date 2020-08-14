@@ -3,7 +3,7 @@ import * as canvas from "../utils/canvas.js";
 import * as modal from "../utils/modal.js";
 
 
-    let arr = util.generateArray(100, 50);
+    let arr = util.generateArray(300, 50);
     let originY = canvas.height - 20;
     let width = canvas.width/arr.length;
     let spacing = width * 0.1;
@@ -11,7 +11,7 @@ import * as modal from "../utils/modal.js";
     let margin = spacing / 2;
 
     
-    const drawArray = (arr, min,) => {
+    const drawArray = (arr, min) => {
         arr.forEach((element, index) => {
           let posX = index * width + margin;
           let rectHeight = heightScale + element * 10;
@@ -58,7 +58,7 @@ import * as modal from "../utils/modal.js";
       drawArray(arr, min_index);
 
       i++;
-    }, 1000);
+    }, 1000/60);
 
 
 
