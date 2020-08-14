@@ -3,7 +3,7 @@ import * as canvas from "../utils/canvas.js";
 import * as modal from "../utils/modal.js";
 
 
-    let arr = util.generateArray(300, 50);
+    let arr = util.generateArray(10, 50);
     let originY = canvas.height - 20;
     let width = canvas.width/arr.length;
     let spacing = width * 0.1;
