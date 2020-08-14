@@ -8,6 +8,18 @@ const paintCanvas = (color) => {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 };
 
+const renderImage = function(blob){
+  
+  var img = new Image();
+
+  img.onload = function(){
+    ctx.drawImage(img, 0, 0)
+  }
+
+  img.src = URL.createObjectURL(blob);
+};
+
+
 export {
-  ctx, paintCanvas, width, height
+  canvas, ctx, paintCanvas, width, height, renderImage
 }
