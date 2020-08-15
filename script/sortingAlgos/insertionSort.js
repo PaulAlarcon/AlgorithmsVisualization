@@ -27,16 +27,6 @@ import * as modal from "../utils/modal.js";
       });
     };
 
-    //REMOVE SOOON
-
-    let paused = false;
-
-    const pausedButton = document.querySelector("#pause-button");
-    pausedButton.addEventListener('click', (evt) => {
-      paused = true;
-    }) 
-
-
      //insertion sort
     let i = 1;
     const currentInterval = setInterval(() => {
@@ -64,7 +54,7 @@ import * as modal from "../utils/modal.js";
         canvas.paintCanvas("black");
         drawArray(arr, key_index);
         i++;
-    }, 1000);
+    }, 1000/15);
 
 
 
