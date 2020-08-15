@@ -40,7 +40,6 @@ import * as modal from "../utils/modal.js";
      //insertion sort
     let i = 1;
     const currentInterval = setInterval(() => {
-        while(!paused){
         if (i == arr.length){
             clearInterval(currentInterval);
             modal.openModal();
@@ -65,7 +64,6 @@ import * as modal from "../utils/modal.js";
         canvas.paintCanvas("black");
         drawArray(arr, key_index);
         i++;
-      }
     }, 1000);
 
 
