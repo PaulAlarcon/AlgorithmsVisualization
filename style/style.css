@@ -1,15 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-*l {
+* {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 body {
-  padding: 0 10%;
+  height: 100vh;
+  color: black;
+  background-color: lightseagreen;
+}
+
+.header {
+  width: 100%;
+  height: 96px;
+  padding: 20px;
+}
+
+.header .inner-header {
+  width: 80%;
+  margin: 0 auto;
+  letter-spacing: 1.5em;
+  text-transform: uppercase;
+}
+
+.header .inner-header .back-button {
+  height: 100%;
+  position: absolute;
+}
+
+.header .inner-header .back-button a {
+  height: 100%;
+  padding-top: 5px;
+  font-size: 25px;
+  color: black;
+  font-family: inherit;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+.header .inner-header .title, .header .inner-header h1, .header .inner-header .back-button {
+  display: inline;
+}
+
+.header .inner-header .title {
+  padding-top: 5px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 .grid {
@@ -18,61 +59,147 @@ body {
   margin: 5vh auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 10% 90%;
-      grid-template-rows: 10% 90%;
-  -ms-grid-columns: 80% 20%;
-      grid-template-columns: 80% 20%;
-      grid-template-areas: "title title" "canvas controls";
-  gap: 20px;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  background-color: lightgrey;
+  -webkit-box-shadow: 10px 10px 150px black;
+          box-shadow: 10px 10px 150px black;
 }
 
-.grid .title {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: title;
-  background-color: lightseagreen;
-  text-align: center;
+.grid .canvas-container {
+  display: -ms-grid;
+  display: grid;
 }
 
-.grid .title h1 {
-  font-size: 25px;
-}
-
-.grid .canvas-wrapper {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: canvas;
-  background-color: black;
-}
-
-.grid .canvas-wrapper .myCanvas {
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-
-.grid .controls {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: controls;
-  background-color: greenyellow;
+.grid .canvas-container .myCanvas {
   margin: auto;
-  padding: 20px;
-  font-size: 20px;
 }
 
-.grid .controls .size-input input {
-  font-size: 12px;
-  font-family: 'Press Start 2P', cursive;
+.grid .controls-grid {
+  display: -ms-grid;
+  display: grid;
+  color: white;
+  margin: auto;
+  height: 90%;
+  width: 90%;
+  padding: 5px;
 }
 
-.grid .controls .controls-buttons button {
-  font-family: "Press Start 2P", cursive;
-  font-size: 20px;
+.grid .controls-grid #size-input {
+  /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+      how to remove the virtical space around the range input in IE*/
+}
+
+.grid .controls-grid #size-input input[type=range].slider {
+  width: 100%;
+  margin: 8.35px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+.grid .controls-grid #size-input input[type=range].slider:focus {
+  outline: none;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-webkit-slider-runnable-track {
+  background: #ff91d8;
+  border: 2.3px solid #dbd58f;
+  border-radius: 25px;
+  width: 100%;
+  height: 13.3px;
+  cursor: pointer;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-webkit-slider-thumb {
+  margin-top: -10.65px;
+  width: 30px;
+  height: 30px;
+  background: #ffff7d;
+  border: 5px solid #ffcdff;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.grid .controls-grid #size-input input[type=range].slider:focus::-webkit-slider-runnable-track {
+  background: #ffbae6;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-moz-range-track {
+  background: #ff91d8;
+  border: 2.3px solid #dbd58f;
+  border-radius: 25px;
+  width: 100%;
+  height: 13.3px;
+  cursor: pointer;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background: #ffff7d;
+  border: 5px solid #ffcdff;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 12.45px 0;
+  color: transparent;
+  width: 100%;
+  height: 13.3px;
+  cursor: pointer;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-ms-fill-lower {
+  background: #ff68ca;
+  border: 2.3px solid #dbd58f;
+  border-radius: 50px;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-ms-fill-upper {
+  background: #ff91d8;
+  border: 2.3px solid #dbd58f;
+  border-radius: 50px;
+}
+
+.grid .controls-grid #size-input input[type=range].slider::-ms-thumb {
+  width: 30px;
+  height: 30px;
+  background: #ffff7d;
+  border: 5px solid #ffcdff;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+
+.grid .controls-grid #size-input input[type=range].slider:focus::-ms-fill-lower {
+  background: #ff91d8;
+}
+
+.grid .controls-grid #size-input input[type=range].slider:focus::-ms-fill-upper {
+  background: #ffbae6;
+}
+
+@supports (-ms-ime-align: auto) {
+  .grid .controls-grid #size-input {
+    /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  }
+  .grid .controls-grid #size-input input[type=range].slider {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
+}
+
+.grid .controls-grid .control {
+  font-size: 30px;
+  border: 1px solid white;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 
 .button-container {

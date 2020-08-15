@@ -7,7 +7,7 @@ import * as modal from "../utils/modal.js";
     let finalIteration = canvasBlobs.length - 1;
     let i = finalIteration;
 
-    const buttons = document.querySelectorAll(".controls");
+    const buttons = document.querySelectorAll(".control");
     buttons.forEach( b => {
       b.addEventListener('click', () => {
         if(b.id == 'prevButton'){
@@ -33,8 +33,8 @@ import * as modal from "../utils/modal.js";
 
   }
 
-    // let arr = util.generateArray(10, 50);
-    let arr = [20., 22, 3, 4, 5, 7, 8, 11, 12, 22, 23, 44, 6,25];
+    let arr = util.generateArray(10, 50);
+    // let arr = [20., 22, 3, 4, 5, 7, 8, 11, 12, 22, 23, 44, 6,25];
     let originY = Canvas.height - 20;
     let width = Canvas.width/arr.length;
     let spacing = width * 0.1;
@@ -56,11 +56,6 @@ import * as modal from "../utils/modal.js";
           );
         });
       };
-
-      const test = document.querySelector("#test");
-      const tb =document.querySelector(".stuff");
-
-
 
      //bubble sort
     const bubbleSort  = () => {
